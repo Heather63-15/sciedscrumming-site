@@ -26,7 +26,7 @@ export default function AboutUs() {
             {/* Organization info */}
             <div>
               <Image
-                src="/images/student-skills-logo.png"
+                src="/images/skills-for-student-success-logo.png"
                 alt="Skills for Student Success"
                 width={196}
                 height={196}

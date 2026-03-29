@@ -45,7 +45,7 @@ export default function SkillsFocusedTutoring() {
         <div className="mx-auto max-w-4xl px-6">
           <div className="mb-10 flex justify-center">
             <Image
-              src="/images/student-skills-logo.png"
+              src="/images/skills-for-student-success-logo.png"
               alt="Student Skills for Success"
               width={196}
               height={196}

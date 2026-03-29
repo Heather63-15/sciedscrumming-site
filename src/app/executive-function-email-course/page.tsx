@@ -131,7 +131,7 @@ export default function EmailCoursePage() {
             </div>
             <div className="flex justify-center">
               <Image
-                src="/images/student-skills-logo.png"
+                src="/images/skills-for-student-success-logo.png"
                 alt="Skills for Student Success"
                 width={300}
                 height={300}

@@ -2,8 +2,24 @@
 
 import { useState, type FormEvent } from "react";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  variant?: "full" | "subscribe";
+  submitLabel?: string;
+  successMessage?: string;
+}
+
+export default function ContactForm({
+  variant = "full",
+  submitLabel,
+  successMessage,
+}: ContactFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  const defaultSubmitLabel = variant === "subscribe" ? "Join the Waitlist" : "Send Message";
+  const defaultSuccessMessage =
+    variant === "subscribe"
+      ? "You're on the list! We'll email you when it launches."
+      : "Message sent! We'll get back to you soon.";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -19,7 +35,7 @@ export default function ContactForm() {
         body: JSON.stringify({
           name: data.get("name"),
           email: data.get("email"),
-          message: data.get("message"),
+          message: variant === "subscribe" ? "Waitlist signup" : data.get("message"),
         }),
       });
 
@@ -37,7 +53,9 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="rounded-lg border border-green-200 bg-green-50 p-6 text-center">
-        <p className="font-semibold text-green-800">Message sent! We&apos;ll get back to you soon.</p>
+        <p className="font-semibold text-green-800">
+          {successMessage || defaultSuccessMessage}
+        </p>
       </div>
     );
   }
@@ -68,24 +86,26 @@ export default function ContactForm() {
           className="w-full rounded-lg border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         />
       </div>
-      <div>
-        <label htmlFor="message" className="mb-1 block text-sm font-medium">
-          Message
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          rows={5}
-          required
-          className="w-full rounded-lg border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-        />
-      </div>
+      {variant === "full" && (
+        <div>
+          <label htmlFor="message" className="mb-1 block text-sm font-medium">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            required
+            className="w-full rounded-lg border border-border px-4 py-2.5 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+        </div>
+      )}
       <button
         type="submit"
         disabled={status === "sending"}
         className="rounded-lg bg-primary px-6 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-dark disabled:opacity-60"
       >
-        {status === "sending" ? "Sending..." : "Send Message"}
+        {status === "sending" ? "Sending..." : (submitLabel || defaultSubmitLabel)}
       </button>
       {status === "error" && (
         <p className="text-sm text-red-600">Something went wrong. Please try again.</p>

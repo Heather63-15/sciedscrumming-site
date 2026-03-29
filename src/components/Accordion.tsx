@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 interface AccordionItem {
   title: string;
-  content: string;
+  content: ReactNode;
 }
 
 export default function Accordion({ items }: { items: AccordionItem[] }) {

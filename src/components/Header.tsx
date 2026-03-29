@@ -84,18 +84,20 @@ export default function Header() {
               </svg>
             </button>
             {productsOpen && (
-              <div className="absolute left-1/2 top-full mt-2 min-w-[280px] -translate-x-1/2 rounded-xl border border-border bg-white p-2 shadow-lg">
-                {productLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="block rounded-lg px-4 py-3 transition-colors hover:bg-bg-alt"
-                    onClick={() => setProductsOpen(false)}
-                  >
-                    <span className="block text-sm font-semibold">{link.label}</span>
-                    <span className="block text-xs text-text-light">{link.description}</span>
-                  </Link>
-                ))}
+              <div className="absolute left-1/2 top-full min-w-[280px] -translate-x-1/2 pt-2">
+                <div className="rounded-xl border border-border bg-white p-2 shadow-lg">
+                  {productLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className="block rounded-lg px-4 py-3 transition-colors hover:bg-bg-alt"
+                      onClick={() => setProductsOpen(false)}
+                    >
+                      <span className="block text-sm font-semibold">{link.label}</span>
+                      <span className="block text-xs text-text-light">{link.description}</span>
+                    </Link>
+                  ))}
+                </div>
               </div>
             )}
           </div>

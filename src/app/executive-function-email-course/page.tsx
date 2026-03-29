@@ -234,7 +234,7 @@ export default function EmailCoursePage() {
             priceNote="one-time payment"
             features={courseFeatures}
             ctaLabel="Get Instant Access"
-            ctaHref="https://buy.stripe.com/PLACEHOLDER"
+            ctaHref="https://buy.stripe.com/8x2aEW51P4Oobq17CY1gs00"
             highlighted
           />
           <div className="mt-8 rounded-xl border border-green-200 bg-green-50 p-6 text-center">

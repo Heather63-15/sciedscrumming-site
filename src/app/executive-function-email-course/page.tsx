@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "Executive Function Email Course for Parents & Tweens",
   description:
-    "Help your tween build essential executive function skills — organization, planning, and self-management. A 5-part email course for just $18.",
+    "Help your tween build essential executive function skills — organization, planning, and self-management. A 10-email course delivered every 4–5 days for just $18.",
 };
 
 export default function EmailCoursePage() {
@@ -23,17 +23,17 @@ export default function EmailCoursePage() {
       {/* Hero */}
       <section className="bg-gradient-to-br from-primary/5 to-bg-alt py-20">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <span className="mb-4 inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
-            5-Part Email Course
+          <span className="mb-4 inline-block rounded-full bg-amber-900/10 px-5 py-2 text-sm font-bold uppercase tracking-wide text-amber-900">
+            10-Email Course
           </span>
           <h1 className="text-4xl font-bold md:text-5xl">
             Help Your Tween Build{" "}
             <span className="text-primary">Executive Function Skills</span>
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-text-light">
-            Practical, proven strategies to help your child get organized, manage
-            their time, and take ownership of their learning — delivered straight
-            to your inbox.
+            10 practical emails (plus a welcome email) delivered every 4–5 days —
+            giving your tween time to practice each skill before building on the
+            next. Real strategies, real results, at your family&apos;s pace.
           </p>
           <a
             href="#pricing"
@@ -147,8 +147,8 @@ export default function EmailCoursePage() {
         <div className="mx-auto max-w-4xl px-6">
           <SectionHeading
             tag="What You'll Learn"
-            title="5 Lessons, 5 Days"
-            subtitle="Each lesson builds on the last, giving you a complete system."
+            title="10 Emails, One Skill at a Time"
+            subtitle="Delivered every 4–5 days so your tween can practice each skill before moving on. Each email builds on the last."
           />
           <div className="space-y-4">
             {courseModules.map((mod) => (

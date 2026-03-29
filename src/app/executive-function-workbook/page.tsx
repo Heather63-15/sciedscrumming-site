@@ -24,7 +24,7 @@ export default function WorkbookPage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid items-center gap-12 md:grid-cols-2">
             <div>
-              <span className="mb-4 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase text-white">
+              <span className="mb-4 inline-block rounded-full bg-amber-900/10 px-5 py-2 text-sm font-bold uppercase tracking-wide text-amber-900">
                 Pre-Order
               </span>
               <h1 className="text-4xl font-bold md:text-5xl">

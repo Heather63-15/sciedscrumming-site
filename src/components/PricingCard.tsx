@@ -26,7 +26,7 @@ export default function PricingCard({
       }`}
     >
       {badge && (
-        <span className="mb-4 inline-block rounded-full bg-accent px-3 py-1 text-xs font-bold uppercase text-white">
+        <span className="mb-4 inline-block rounded-full bg-amber-900/10 px-5 py-2 text-sm font-bold uppercase tracking-wide text-amber-900">
           {badge}
         </span>
       )}

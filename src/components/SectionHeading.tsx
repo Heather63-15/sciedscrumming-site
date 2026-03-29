@@ -14,7 +14,7 @@ export default function SectionHeading({
   return (
     <div className={`mb-10 ${centered ? "text-center" : ""}`}>
       {tag && (
-        <span className="mb-3 inline-block rounded-full bg-accent/10 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-accent">
+        <span className="mb-3 inline-block rounded-full bg-amber-900/10 px-5 py-2 text-sm font-bold uppercase tracking-wide text-amber-900">
           {tag}
         </span>
       )}

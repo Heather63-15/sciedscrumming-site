@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -9,6 +10,27 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
+    <>
+      {/* Meta Pixel Lead event */}
+      <Script id="fb-lead" strategy="afterInteractive">{`
+        if(typeof fbq === 'function') { fbq('track', 'Lead'); }
+      `}</Script>
+
+      {/* GA4 purchase event */}
+      <Script id="ga4-purchase" strategy="afterInteractive">{`
+        if(typeof gtag === 'function') {
+          gtag('event', 'purchase', {
+            currency: 'USD',
+            value: 18.00,
+            items: [{
+              item_name: 'Executive Function Email Course',
+              price: 18.00,
+              quantity: 1
+            }]
+          });
+        }
+      `}</Script>
+
     <section className="py-20">
       <div className="mx-auto max-w-2xl px-6 text-center">
         <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
@@ -52,5 +74,6 @@ export default function ThankYouPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

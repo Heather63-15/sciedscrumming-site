@@ -73,22 +73,12 @@ export default function DemmeLearningPodcastPage() {
               free PDF.
             </p>
 
-            {/*
-              ============================================================
-              PASTE YOUR KIT FORM EMBED CODE BELOW (replace this comment)
-
-              In Kit: Landing Pages & Forms → your form → Publish → Embed
-              Copy the <script> tag and paste it here.
-
-              Example:
-              <Script
-                async
-                data-uid="YOUR_FORM_UID"
-                src="https://YOUR_ACCOUNT.ck.page/YOUR_FORM_UID/index.js"
-                strategy="lazyOnload"
-              />
-              ============================================================
-            */}
+            <Script
+              async
+              data-uid="b4119f8132"
+              src="https://sciedscrumming.kit.com/b4119f8132/index.js"
+              strategy="lazyOnload"
+            />
           </div>
         </div>
       </section>

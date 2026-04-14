@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Script from "next/script";
+import KitForm from "./KitForm";
 
 export const metadata: Metadata = {
   title: "Flipping the Script: How Scrum Transformed High School Instruction",
@@ -65,20 +65,21 @@ export default function DemmeLearningPodcastPage() {
             free PDF.
           </p>
 
+          <a
+            href="#kit-form"
+            className="mt-8 inline-block rounded-lg bg-primary px-8 py-3 text-sm font-semibold text-white transition-all hover:bg-primary-dark hover:shadow-lg"
+          >
+            Send me the resource list
+          </a>
+
           {/* Kit form card */}
-          <div className="mx-auto mt-10 max-w-md rounded-2xl border border-border bg-white p-8 text-left shadow-lg">
-            <p className="mb-1 font-bold">Send me the resource list</p>
+          <div id="kit-form" className="mx-auto mt-10 max-w-md rounded-2xl border border-border bg-white p-8 text-left shadow-lg scroll-mt-24">
+            <p className="mb-1 font-bold">Get the free bibliography PDF</p>
             <p className="mb-5 text-sm text-text-light">
               Enter your email and we&apos;ll send you the complete bibliography as a
               free PDF.
             </p>
-
-            <Script
-              async
-              data-uid="b4119f8132"
-              src="https://sciedscrumming.kit.com/b4119f8132/index.js"
-              strategy="lazyOnload"
-            />
+            <KitForm />
           </div>
         </div>
       </section>
@@ -148,7 +149,7 @@ export default function DemmeLearningPodcastPage() {
       {/* About SciEdScrumming */}
       <section className="py-16">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="flex flex-col items-center gap-10 text-center md:flex-row md:text-left">
+          <div className="flex flex-col items-center gap-10 text-center">
             <div className="shrink-0">
               <Image
                 src="/images/skills-for-student-success-logo.png"
